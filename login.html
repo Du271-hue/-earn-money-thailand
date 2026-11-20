@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Earn Money Thailand</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      margin: 0;
+      padding: 30px 15px;
+    }
+    .container {
+      max-width: 420px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px #0001;
+    }
+    h1 {
+      color: #176b45;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      color: #555;
+    }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #176b45;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    a { color: #176b45; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome Back!</h1>
+    <p>Login to Earn Money Thailand</p>
+
+    <form id="loginForm">
+      <input type="email" placeholder="Your email address" required>
+      <input type="password" placeholder="Your password" required>
+      <button type="submit">Login</button>
+    </form>
+
+    <p id="message"></p>
+    <p><a href="register.html">Create an account</a></p>
+    <p><a href="index.html">Back to Home</a></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL =
+      "https://lfvikmfpmcodlnqawmed.supabase.co";
+
+    const SUPABASE_KEY =
+      "sb_publishable_lhfefb25kkiZjUQ2wTLF3A_LjWyBYcA";
+
+    const supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+    document.getElementById("loginForm")
+      .addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const inputs = this.querySelectorAll("input");
+        const email = inputs[0].value.trim();
+        const password = inputs[1].value;
+        const message = document.getElementById("message");
+
+        message.textContent = "Logging in...";
+
+        const { error } =
+          await supabaseClient.auth.signInWithPassword({
+            email,
+            password
+          });
+
+        message.textContent = error
+          ? error.message
+          : "Login successful! Welcome back.";
+      });
+  </script>
+</body>
+</html>
