@@ -98,8 +98,11 @@
   return;
 }
 
-message.textContent = "Login successful! Welcome back.";
-window.location.href = "dashboard.html";
+message.textContent = "Login successful! Opening dashboard...";
+
+setTimeout(function() {
+  window.location.assign("./dashboard.html");
+}, 1000);
       });
   </script>
 </body>
