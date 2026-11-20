@@ -93,9 +93,13 @@
             password
           });
 
-        message.textContent = error
-          ? error.message
-          : "Login successful! Welcome back.";
+      if (error) {
+  message.textContent = error.message;
+  return;
+}
+
+message.textContent = "Login successful! Welcome back.";
+window.location.href = "dashboard.html";
       });
   </script>
 </body>
