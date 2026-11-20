@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Earn Money Thailand</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      margin: 0;
+      padding: 30px 15px;
+    }
+    .container {
+      max-width: 420px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px #0001;
+    }
+    h1 {
+      color: #176b45;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      color: #555;
+    }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #176b45;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    a {
+      color: #176b45;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Join Us</h1>
+    <p>Create your Earn Money Thailand account</p>
+
+    <form id="registerForm">
+      <input type="text" placeholder="Your full name" required>
+      <input type="email" placeholder="Your email address" required>
+      <input type="password" placeholder="Create a password"
+        minlength="6" required>
+      <button type="submit">Create Account</button>
+    </form>
+
+    <p id="message"></p>
+    <p><a href="index.html">Back to Home</a></p>
+  </div>
+
+  <script>
+    document.getElementById("registerForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("message").textContent =
+          "Registration setup is coming next!";
+      });
+  </script>
+</body>
+</html>
