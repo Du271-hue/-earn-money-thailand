@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Earn Money Thailand</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background: #176b45;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 25px auto;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px #0001;
+    }
+    h2 {
+      color: #176b45;
+    }
+    a, button {
+      display: inline-block;
+      background: #176b45;
+      color: white;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Earn Money Thailand</h1>
+    <p>Welcome to your dashboard!</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>My Account</h2>
+      <p id="userEmail">Loading account...</p>
+    </div>
+
+    <div class="card">
+      <h2>Earn Money Online</h2>
+      <p>Discover opportunities to earn money online.</p>
+      <p>More earning opportunities coming soon!</p>
+    </div>
+
+    <div class="card">
+      <h2>My Earnings</h2>
+      <p>Your earnings will appear here.</p>
+      <p>Current balance: ฿0.00</p>
+    </div>
+
+    <div class="card">
+      <h2>Account</h2>
+      <button id="logoutButton">Log Out</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL =
+      "https://lfvikmfpmcodlnqawmed.supabase.co";
+
+    const SUPABASE_KEY =
+      "sb_publishable_lhfefb25kkiZjUQ2 wTLF3A_LjWyBYcA";
+
+    const supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+    async function loadDashboard() {
+      const { data, error } =
+        await supabaseClient.auth.getUser();
+
+      if (error || !data.user) {
+        window.location.href = "login.html";
+        return;
+      }
+
+      document.getElementById("userEmail").textContent =
+        "Logged in as: " + data.user.email;
+    }
+
+    document.getElementById("logoutButton")
+      .addEventListener("click", async function() {
+        const { error } = await supabaseClient.auth.signOut();
+
+        if (error) {
+          alert(error.message);
+          return;
+        }
+
+        window.location.href = "login.html";
+      });
+
+    loadDashboard();
+  </script>
+
+</body>
+</html>
