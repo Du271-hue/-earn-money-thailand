@@ -19,19 +19,28 @@
       text-align: center;
     }
     header h1 { margin: 0; }
-    nav { margin-top: 15px; }
+    nav {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
     nav a {
       color: white;
-      margin: 0 10px;
       text-decoration: none;
     }
+    nav a:hover { text-decoration: underline; }
     .hero {
       text-align: center;
       padding: 65px 20px;
       background: white;
     }
     .hero h2 { font-size: 32px; }
-    .hero p { color: #52665c; line-height: 1.6; }
+    .hero p {
+      color: #52665c;
+      line-height: 1.6;
+    }
     .button {
       display: inline-block;
       background: #07945b;
@@ -41,16 +50,27 @@
       text-decoration: none;
       margin: 10px;
     }
+    .button:hover { background: #056d43; }
     .features {
       padding: 30px 20px;
       text-align: center;
     }
+    .job-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: 25px auto;
+    }
     .feature {
       background: white;
       padding: 22px;
-      margin: 15px auto;
-      max-width: 450px;
       border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    }
+    .feature p {
+      color: #52665c;
+      line-height: 1.6;
     }
     footer {
       background: #075c3b;
@@ -65,50 +85,93 @@
 <header>
   <h1>Earn Money Thailand</h1>
   <nav>
-  <a href="#home">Home</a>
-  <a href="#jobs">Online Jobs</a>
-  <a href="#about">About</a>
-  <a href="login.html">Login</a>
-  <a href="register.html">Register</a>
-  <a href="dashboard.html">Dashboard</a>
+    <a href="#home">Home</a>
+    <a href="#jobs">Online Jobs</a>
+    <a href="#about">About</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <a href="dashboard.html">Dashboard</a>
   </nav>
 </header>
 
 <section class="hero" id="home">
   <h2>Welcome to Earn Money Thailand!</h2>
-  <p>Discover online jobs, freelance opportunities
-  and ways to earn money from home.</p>
+  <p>
+    Discover online jobs, freelance opportunities
+    and ways to earn money from home.
+    <br>
+    ค้นหางานออนไลน์และโอกาสสร้างรายได้จากที่บ้าน
+  </p>
   <a class="button" href="#jobs">Explore Opportunities</a>
   <a class="button" href="register.html">Join Us</a>
 </section>
 
 <section class="features" id="jobs">
   <h2>Ways to Earn Online</h2>
+  <p>Explore different ways to earn money online.</p>
 
-  <div class="feature">
-    <h3>🌐 Freelancing</h3>
-    <p>Find online freelance opportunities.</p>
-  </div>
+  <div class="job-grid">
 
-  <div class="feature">
-    <h3>✍️ Translation</h3>
-    <p>Explore Thai and English translation work.</p>
-  </div>
+    <div class="feature">
+      <h3>🌐 Freelancing</h3>
+      <p>Find freelance projects and work with clients online.</p>
+      <p>รับงานฟรีแลนซ์ผ่านอินเทอร์เน็ต</p>
+    </div>
 
-  <div class="feature">
-    <h3>💻 Remote Jobs</h3>
-    <p>Discover work-from-home opportunities.</p>
+    <div class="feature">
+      <h3>✍️ Translation</h3>
+      <p>Explore Thai and English translation opportunities.</p>
+      <p>รับงานแปลภาษาไทยและภาษาอังกฤษ</p>
+    </div>
+
+    <div class="feature">
+      <h3>💻 Remote Jobs</h3>
+      <p>Discover work-from-home job opportunities.</p>
+      <p>ค้นหางานที่ทำจากที่บ้าน</p>
+    </div>
+
+    <div class="feature">
+      <h3>📊 Online Surveys</h3>
+      <p>Participate in online surveys offered by research platforms.</p>
+      <p>ตอบแบบสอบถามออนไลน์</p>
+    </div>
+
+    <div class="feature">
+      <h3>📝 Content Writing</h3>
+      <p>Earn by writing articles, blogs and website content.</p>
+      <p>สร้างรายได้จากการเขียนบทความ</p>
+    </div>
+
+    <div class="feature">
+      <h3>🔗 Affiliate Marketing</h3>
+      <p>Earn commissions by promoting products and services.</p>
+      <p>รับค่าคอมมิชชันจากการแนะนำสินค้า</p>
+    </div>
+
+    <div class="feature">
+      <h3>🎧 Virtual Assistant</h3>
+      <p>Help businesses with online administration and support.</p>
+      <p>ช่วยงานธุรกิจผ่านระบบออนไลน์</p>
+    </div>
+
   </div>
 </section>
 
 <section class="features" id="about">
   <h2>About Us</h2>
-  <p>Our goal is to help people in Thailand
-  discover online earning opportunities.</p>
+  <p>
+    Our goal is to help people in Thailand
+    discover online earning opportunities.
+  </p>
+  <p>
+    เป้าหมายของเราคือช่วยให้คนไทยค้นพบโอกาส
+    ในการสร้างรายได้ผ่านช่องทางออนไลน์
+  </p>
 </section>
 
 <footer>
   <p>© 2026 Earn Money Thailand</p>
+  <p>Discover opportunities. Build your future.</p>
 </footer>
 
 </body>
