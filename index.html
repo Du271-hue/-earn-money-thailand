@@ -25,9 +25,7 @@
 
     header h1 { margin: 0; }
 
-    .language {
-      margin-top: 15px;
-    }
+    .language { margin-top: 15px; }
 
     .language select {
       padding: 10px;
@@ -75,7 +73,10 @@
       margin: 10px;
     }
 
-    .button:hover { background: #056d43; }
+    .button:hover,
+    .platform-link:hover {
+      background: #056d43;
+    }
 
     .features {
       padding: 35px 20px;
@@ -100,6 +101,23 @@
     .feature p {
       color: #52665c;
       line-height: 1.7;
+    }
+
+    .platform-link {
+      display: inline-block;
+      background: #07945b;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .safety-note {
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.7;
+      color: #52665c;
     }
 
     footer {
@@ -132,6 +150,7 @@
   <nav>
     <a href="#home" data-i="home">Home</a>
     <a href="#jobs" data-i="navJobs">Online Jobs</a>
+    <a href="#opportunities" data-i="navOpportunities">Job Platforms</a>
     <a href="#about" data-i="navAbout">About</a>
     <a href="login.html" data-i="login">Login</a>
     <a href="register.html" data-i="register">Register</a>
@@ -142,8 +161,7 @@
 <section class="hero" id="home">
   <h2 data-i="welcome">Welcome to Earn Money Thailand!</h2>
   <p data-i="intro">
-    Discover online jobs, freelance opportunities
-    and ways to earn money from home.
+    Discover online jobs, freelance opportunities and ways to earn money from home.
   </p>
   <a class="button" href="#jobs" data-i="explore">Explore Opportunities</a>
   <a class="button" href="register.html" data-i="join">Join Us</a>
@@ -193,6 +211,55 @@
   </div>
 </section>
 
+<section class="features" id="opportunities">
+  <h2 data-i="realTitle">Real Online Job Opportunities</h2>
+  <p data-i="realDesc">Explore these platforms to find work opportunities.</p>
+
+  <div class="job-grid">
+
+    <div class="feature">
+      <h3>🇹🇭 Khon Tham Ngan Issara</h3>
+      <p data-i="platform1Desc">
+        Thailand's Department of Employment freelance platform.
+      </p>
+      <a class="platform-link"
+         href="https://khonthamngan.doe.go.th/"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-i="visitPlatform">Visit Platform</a>
+    </div>
+
+    <div class="feature">
+      <h3>🌍 Upwork</h3>
+      <p data-i="platform2Desc">
+        Find international freelance jobs and remote projects.
+      </p>
+      <a class="platform-link"
+         href="https://www.upwork.com/freelance-jobs/"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-i="visitPlatform">Visit Platform</a>
+    </div>
+
+    <div class="feature">
+      <h3>💻 JobsDB Thailand</h3>
+      <p data-i="platform3Desc">
+        Search remote and work-from-home jobs in Thailand.
+      </p>
+      <a class="platform-link"
+         href="https://th.jobsdb.com/remote-jobs"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-i="visitPlatform">Visit Platform</a>
+    </div>
+
+  </div>
+
+  <p class="safety-note" data-i="safetyNote">
+    Always check job details carefully. Never pay money to get a job.
+  </p>
+</section>
+
 <section class="features" id="about">
   <h2 data-i="aboutTitle">About Us</h2>
   <p data-i="aboutDesc">
@@ -208,8 +275,8 @@
 <script>
 const translations = {
   en: {
-    home:"Home", navJobs:"Online Jobs", navAbout:"About",
-    login:"Login", register:"Register", dashboard:"Dashboard",
+    home:"Home", navJobs:"Online Jobs", navOpportunities:"Job Platforms",
+    navAbout:"About", login:"Login", register:"Register", dashboard:"Dashboard",
     welcome:"Welcome to Earn Money Thailand!",
     intro:"Discover online jobs, freelance opportunities and ways to earn money from home.",
     explore:"Explore Opportunities", join:"Join Us",
@@ -229,14 +296,21 @@ const translations = {
     affiliateDesc:"Earn commissions by promoting products and services.",
     assistant:"Virtual Assistant",
     assistantDesc:"Help businesses with online administration and support.",
+    realTitle:"Real Online Job Opportunities",
+    realDesc:"Explore these platforms to find work opportunities.",
+    platform1Desc:"Thailand's Department of Employment freelance platform.",
+    platform2Desc:"Find international freelance jobs and remote projects.",
+    platform3Desc:"Search remote and work-from-home jobs in Thailand.",
+    visitPlatform:"Visit Platform",
+    safetyNote:"Always check job details carefully. Never pay money to get a job.",
     aboutTitle:"About Us",
     aboutDesc:"Our goal is to help people in Thailand discover online earning opportunities.",
     footer:"Discover opportunities. Build your future."
   },
 
   th: {
-    home:"หน้าแรก", navJobs:"งานออนไลน์", navAbout:"เกี่ยวกับเรา",
-    login:"เข้าสู่ระบบ", register:"สมัครสมาชิก", dashboard:"แดชบอร์ด",
+    home:"หน้าแรก", navJobs:"งานออนไลน์", navOpportunities:"แพลตฟอร์มหางาน",
+    navAbout:"เกี่ยวกับเรา", login:"เข้าสู่ระบบ", register:"สมัครสมาชิก", dashboard:"แดชบอร์ด",
     welcome:"ยินดีต้อนรับสู่ Earn Money Thailand!",
     intro:"ค้นหางานออนไลน์ งานฟรีแลนซ์ และวิธีสร้างรายได้จากที่บ้าน",
     explore:"ค้นหาโอกาส", join:"เข้าร่วมกับเรา",
@@ -256,14 +330,21 @@ const translations = {
     affiliateDesc:"รับค่าคอมมิชชันจากการแนะนำสินค้าและบริการ",
     assistant:"ผู้ช่วยเสมือน",
     assistantDesc:"ช่วยธุรกิจจัดการงานและให้บริการผ่านออนไลน์",
+    realTitle:"แหล่งหางานออนไลน์จริง",
+    realDesc:"สำรวจแพลตฟอร์มเหล่านี้เพื่อค้นหาโอกาสในการทำงาน",
+    platform1Desc:"แพลตฟอร์มฟรีแลนซ์ของกรมการจัดหางานประเทศไทย",
+    platform2Desc:"ค้นหางานฟรีแลนซ์และงานทางไกลจากต่างประเทศ",
+    platform3Desc:"ค้นหางานทางไกลและงานทำจากที่บ้านในประเทศไทย",
+    visitPlatform:"เยี่ยมชมแพลตฟอร์ม",
+    safetyNote:"ตรวจสอบรายละเอียดงานให้ดีก่อนสมัคร อย่าจ่ายเงินเพื่อแลกกับการได้งาน",
     aboutTitle:"เกี่ยวกับเรา",
     aboutDesc:"เป้าหมายของเราคือช่วยให้คนไทยค้นพบโอกาสสร้างรายได้ออนไลน์",
     footer:"ค้นพบโอกาส สร้างอนาคตของคุณ"
   },
 
   hi: {
-    home:"होम", navJobs:"ऑनलाइन नौकरियाँ", navAbout:"हमारे बारे में",
-    login:"लॉगिन", register:"रजिस्टर", dashboard:"डैशबोर्ड",
+    home:"होम", navJobs:"ऑनलाइन नौकरियाँ", navOpportunities:"नौकरी प्लेटफ़ॉर्म",
+    navAbout:"हमारे बारे में", login:"लॉगिन", register:"रजिस्टर", dashboard:"डैशबोर्ड",
     welcome:"Earn Money Thailand में आपका स्वागत है!",
     intro:"ऑनलाइन नौकरियाँ, फ्रीलांस काम और घर से पैसे कमाने के तरीके खोजें।",
     explore:"अवसर देखें", join:"हमसे जुड़ें",
@@ -283,14 +364,21 @@ const translations = {
     affiliateDesc:"उत्पादों का प्रचार करके कमीशन कमाएँ।",
     assistant:"वर्चुअल असिस्टेंट",
     assistantDesc:"व्यवसायों को ऑनलाइन सहायता दें।",
+    realTitle:"वास्तविक ऑनलाइन नौकरी के अवसर",
+    realDesc:"काम के अवसर खोजने के लिए इन प्लेटफॉर्म को देखें।",
+    platform1Desc:"थाईलैंड के रोजगार विभाग का फ्रीलांस प्लेटफॉर्म।",
+    platform2Desc:"अंतरराष्ट्रीय फ्रीलांस और रिमोट नौकरियाँ खोजें।",
+    platform3Desc:"थाईलैंड में रिमोट और घर से काम करने वाली नौकरियाँ खोजें।",
+    visitPlatform:"प्लेटफॉर्म देखें",
+    safetyNote:"नौकरी का विवरण ध्यान से जाँचें। नौकरी पाने के लिए कभी पैसे न दें।",
     aboutTitle:"हमारे बारे में",
     aboutDesc:"हमारा लक्ष्य थाईलैंड के लोगों को ऑनलाइन कमाई के अवसर खोजने में मदद करना है।",
     footer:"अवसर खोजें। अपना भविष्य बनाएँ।"
   },
 
   zh: {
-    home:"首页", navJobs:"在线工作", navAbout:"关于我们",
-    login:"登录", register:"注册", dashboard:"用户中心",
+    home:"首页", navJobs:"在线工作", navOpportunities:"求职平台",
+    navAbout:"关于我们", login:"登录", register:"注册", dashboard:"用户中心",
     welcome:"欢迎来到 Earn Money Thailand！",
     intro:"寻找在线工作、自由职业和在家赚钱的机会。",
     explore:"探索机会", join:"加入我们",
@@ -310,14 +398,21 @@ const translations = {
     affiliateDesc:"通过推广产品和服务赚取佣金。",
     assistant:"虚拟助理",
     assistantDesc:"为企业提供在线行政和支持服务。",
+    realTitle:"真实的在线工作机会",
+    realDesc:"通过以下平台寻找工作机会。",
+    platform1Desc:"泰国就业厅的自由职业平台。",
+    platform2Desc:"寻找国际自由职业和远程工作。",
+    platform3Desc:"搜索泰国的远程和居家工作。",
+    visitPlatform:"访问平台",
+    safetyNote:"请仔细核实工作信息。不要为了获得工作而付款。",
     aboutTitle:"关于我们",
     aboutDesc:"我们的目标是帮助泰国居民发现在线赚钱机会。",
     footer:"发现机会，创造未来。"
   },
 
   ja: {
-    home:"ホーム", navJobs:"オンラインの仕事", navAbout:"私たちについて",
-    login:"ログイン", register:"登録", dashboard:"ダッシュボード",
+    home:"ホーム", navJobs:"オンラインの仕事", navOpportunities:"仕事探しのサイト",
+    navAbout:"私たちについて", login:"ログイン", register:"登録", dashboard:"ダッシュボード",
     welcome:"Earn Money Thailandへようこそ！",
     intro:"オンラインの仕事や在宅で収入を得る機会を見つけましょう。",
     explore:"仕事を探す", join:"参加する",
@@ -337,14 +432,21 @@ const translations = {
     affiliateDesc:"商品やサービスを紹介して報酬を得ましょう。",
     assistant:"オンラインアシスタント",
     assistantDesc:"企業のオンライン業務をサポートしましょう。",
+    realTitle:"実際のオンライン仕事の機会",
+    realDesc:"以下のプラットフォームで仕事を探しましょう。",
+    platform1Desc:"タイ雇用局のフリーランス向けプラットフォーム。",
+    platform2Desc:"海外のフリーランスやリモートの仕事を探せます。",
+    platform3Desc:"タイ国内のリモートや在宅の仕事を探せます。",
+    visitPlatform:"プラットフォームを見る",
+    safetyNote:"応募前に仕事内容をよく確認してください。仕事を得るためにお金を払わないでください。",
     aboutTitle:"私たちについて",
     aboutDesc:"タイの人々がオンラインで収入を得る機会を見つけるお手伝いをします。",
     footer:"機会を見つけ、未来を築きましょう。"
   },
 
   ko: {
-    home:"홈", navJobs:"온라인 일자리", navAbout:"소개",
-    login:"로그인", register:"회원가입", dashboard:"대시보드",
+    home:"홈", navJobs:"온라인 일자리", navOpportunities:"구직 플랫폼",
+    navAbout:"소개", login:"로그인", register:"회원가입", dashboard:"대시보드",
     welcome:"Earn Money Thailand에 오신 것을 환영합니다!",
     intro:"온라인 일자리와 재택근무 기회를 찾아보세요.",
     explore:"기회 찾아보기", join:"가입하기",
@@ -364,14 +466,21 @@ const translations = {
     affiliateDesc:"상품과 서비스를 홍보하고 수수료를 받으세요.",
     assistant:"가상 비서",
     assistantDesc:"기업의 온라인 업무를 지원하세요.",
+    realTitle:"실제 온라인 일자리 기회",
+    realDesc:"아래 플랫폼에서 일자리를 찾아보세요.",
+    platform1Desc:"태국 고용부의 프리랜서 플랫폼입니다.",
+    platform2Desc:"해외 프리랜서 및 원격 일자리를 찾아보세요.",
+    platform3Desc:"태국의 재택 및 원격 근무 일자리를 검색하세요.",
+    visitPlatform:"플랫폼 방문",
+    safetyNote:"지원 전에 업무 내용을 확인하세요. 일자리를 얻기 위해 돈을 지불하지 마세요.",
     aboutTitle:"소개",
     aboutDesc:"태국 사람들이 온라인 수익 기회를 찾도록 돕는 것이 우리의 목표입니다.",
     footer:"기회를 찾고 미래를 만들어 보세요."
   },
 
   vi: {
-    home:"Trang chủ", navJobs:"Việc làm trực tuyến", navAbout:"Giới thiệu",
-    login:"Đăng nhập", register:"Đăng ký", dashboard:"Bảng điều khiển",
+    home:"Trang chủ", navJobs:"Việc làm trực tuyến", navOpportunities:"Nền tảng việc làm",
+    navAbout:"Giới thiệu", login:"Đăng nhập", register:"Đăng ký", dashboard:"Bảng điều khiển",
     welcome:"Chào mừng đến với Earn Money Thailand!",
     intro:"Khám phá việc làm trực tuyến và cơ hội kiếm tiền tại nhà.",
     explore:"Khám phá cơ hội", join:"Tham gia",
@@ -391,14 +500,21 @@ const translations = {
     affiliateDesc:"Kiếm hoa hồng bằng cách quảng bá sản phẩm và dịch vụ.",
     assistant:"Trợ lý ảo",
     assistantDesc:"Hỗ trợ doanh nghiệp quản lý công việc trực tuyến.",
+    realTitle:"Cơ hội việc làm trực tuyến thực tế",
+    realDesc:"Khám phá các nền tảng sau để tìm cơ hội việc làm.",
+    platform1Desc:"Nền tảng việc làm tự do của Cục Việc làm Thái Lan.",
+    platform2Desc:"Tìm việc làm tự do và việc làm từ xa quốc tế.",
+    platform3Desc:"Tìm việc làm từ xa và tại nhà ở Thái Lan.",
+    visitPlatform:"Truy cập nền tảng",
+    safetyNote:"Luôn kiểm tra kỹ thông tin công việc. Không trả tiền để được nhận việc.",
     aboutTitle:"Giới thiệu",
     aboutDesc:"Mục tiêu của chúng tôi là giúp mọi người tại Thái Lan tìm cơ hội kiếm tiền trực tuyến.",
     footer:"Khám phá cơ hội. Xây dựng tương lai."
   },
 
   ms: {
-    home:"Laman Utama", navJobs:"Kerja Dalam Talian", navAbout:"Tentang Kami",
-    login:"Log Masuk", register:"Daftar", dashboard:"Papan Pemuka",
+    home:"Laman Utama", navJobs:"Kerja Dalam Talian", navOpportunities:"Platform Pekerjaan",
+    navAbout:"Tentang Kami", login:"Log Masuk", register:"Daftar", dashboard:"Papan Pemuka",
     welcome:"Selamat datang ke Earn Money Thailand!",
     intro:"Temui pekerjaan dalam talian dan peluang menjana pendapatan dari rumah.",
     explore:"Terokai Peluang", join:"Sertai Kami",
@@ -418,6 +534,13 @@ const translations = {
     affiliateDesc:"Dapatkan komisen dengan mempromosikan produk dan perkhidmatan.",
     assistant:"Pembantu Maya",
     assistantDesc:"Bantu perniagaan dengan urusan pentadbiran dalam talian.",
+    realTitle:"Peluang Pekerjaan Dalam Talian Sebenar",
+    realDesc:"Terokai platform ini untuk mencari peluang pekerjaan.",
+    platform1Desc:"Platform kerja bebas Jabatan Pekerjaan Thailand.",
+    platform2Desc:"Cari kerja bebas antarabangsa dan projek jarak jauh.",
+    platform3Desc:"Cari kerja jarak jauh dan dari rumah di Thailand.",
+    visitPlatform:"Lawati Platform",
+    safetyNote:"Semak butiran kerja dengan teliti. Jangan bayar wang untuk mendapatkan pekerjaan.",
     aboutTitle:"Tentang Kami",
     aboutDesc:"Matlamat kami adalah membantu masyarakat di Thailand menemui peluang menjana pendapatan dalam talian.",
     footer:"Temui peluang. Bina masa depan anda."
@@ -448,8 +571,10 @@ const languageSelect = document.getElementById("languageSelect");
 
 languageSelect.addEventListener("change", changeLanguage);
 
+
 try {
   const savedLanguage = localStorage.getItem("preferredLanguage");
+
   if (savedLanguage && translations[savedLanguage]) {
     languageSelect.value = savedLanguage;
   }
