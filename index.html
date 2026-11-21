@@ -3,44 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover online jobs and earning opportunities in Thailand.">
   <title>Earn Money Thailand</title>
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f4f7f5;
       color: #18352a;
     }
+
     header {
       background: #075c3b;
       color: white;
       padding: 22px;
       text-align: center;
     }
+
     header h1 { margin: 0; }
-    nav {
+
+    .language {
       margin-top: 15px;
+    }
+
+    .language select {
+      padding: 10px;
+      border: none;
+      border-radius: 7px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    nav {
+      margin-top: 18px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
     }
+
     nav a {
       color: white;
       text-decoration: none;
     }
+
     nav a:hover { text-decoration: underline; }
+
     .hero {
       text-align: center;
       padding: 65px 20px;
       background: white;
     }
+
     .hero h2 { font-size: 32px; }
+
     .hero p {
       color: #52665c;
-      line-height: 1.6;
+      line-height: 1.7;
     }
+
     .button {
       display: inline-block;
       background: #07945b;
@@ -50,11 +74,14 @@
       text-decoration: none;
       margin: 10px;
     }
+
     .button:hover { background: #056d43; }
+
     .features {
-      padding: 30px 20px;
+      padding: 35px 20px;
       text-align: center;
     }
+
     .job-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -62,16 +89,19 @@
       max-width: 1000px;
       margin: 25px auto;
     }
+
     .feature {
       background: white;
       padding: 22px;
       border-radius: 12px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.06);
     }
+
     .feature p {
       color: #52665c;
-      line-height: 1.6;
+      line-height: 1.7;
     }
+
     footer {
       background: #075c3b;
       color: white;
@@ -80,99 +110,355 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Earn Money Thailand</h1>
+
+  <div class="language">
+    <select id="languageSelect" aria-label="Choose language">
+      <option value="en">🇬🇧 English</option>
+      <option value="th">🇹🇭 ไทย</option>
+      <option value="hi">🇮🇳 हिन्दी</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="ja">🇯🇵 日本語</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="vi">🇻🇳 Tiếng Việt</option>
+      <option value="ms">🇲🇾 Bahasa Melayu</option>
+    </select>
+  </div>
+
   <nav>
-    <a href="#home">Home</a>
-    <a href="#jobs">Online Jobs</a>
-    <a href="#about">About</a>
-    <a href="login.html">Login</a>
-    <a href="register.html">Register</a>
-    <a href="dashboard.html">Dashboard</a>
+    <a href="#home" data-i="home">Home</a>
+    <a href="#jobs" data-i="navJobs">Online Jobs</a>
+    <a href="#about" data-i="navAbout">About</a>
+    <a href="login.html" data-i="login">Login</a>
+    <a href="register.html" data-i="register">Register</a>
+    <a href="dashboard.html" data-i="dashboard">Dashboard</a>
   </nav>
 </header>
 
 <section class="hero" id="home">
-  <h2>Welcome to Earn Money Thailand!</h2>
-  <p>
+  <h2 data-i="welcome">Welcome to Earn Money Thailand!</h2>
+  <p data-i="intro">
     Discover online jobs, freelance opportunities
     and ways to earn money from home.
-    <br>
-    ค้นหางานออนไลน์และโอกาสสร้างรายได้จากที่บ้าน
   </p>
-  <a class="button" href="#jobs">Explore Opportunities</a>
-  <a class="button" href="register.html">Join Us</a>
+  <a class="button" href="#jobs" data-i="explore">Explore Opportunities</a>
+  <a class="button" href="register.html" data-i="join">Join Us</a>
 </section>
 
 <section class="features" id="jobs">
-  <h2>Ways to Earn Online</h2>
-  <p>Explore different ways to earn money online.</p>
+  <h2 data-i="ways">Ways to Earn Online</h2>
+  <p data-i="description">Explore different ways to earn money online.</p>
 
   <div class="job-grid">
 
     <div class="feature">
-      <h3>🌐 Freelancing</h3>
-      <p>Find freelance projects and work with clients online.</p>
-      <p>รับงานฟรีแลนซ์ผ่านอินเทอร์เน็ต</p>
+      <h3>🌐 <span data-i="freelance">Freelancing</span></h3>
+      <p data-i="freelanceDesc">Find freelance projects and work with clients online.</p>
     </div>
 
     <div class="feature">
-      <h3>✍️ Translation</h3>
-      <p>Explore Thai and English translation opportunities.</p>
-      <p>รับงานแปลภาษาไทยและภาษาอังกฤษ</p>
+      <h3>✍️ <span data-i="translation">Translation</span></h3>
+      <p data-i="translationDesc">Explore Thai and English translation opportunities.</p>
     </div>
 
     <div class="feature">
-      <h3>💻 Remote Jobs</h3>
-      <p>Discover work-from-home job opportunities.</p>
-      <p>ค้นหางานที่ทำจากที่บ้าน</p>
+      <h3>💻 <span data-i="remote">Remote Jobs</span></h3>
+      <p data-i="remoteDesc">Discover work-from-home job opportunities.</p>
     </div>
 
     <div class="feature">
-      <h3>📊 Online Surveys</h3>
-      <p>Participate in online surveys offered by research platforms.</p>
-      <p>ตอบแบบสอบถามออนไลน์</p>
+      <h3>📊 <span data-i="surveys">Online Surveys</span></h3>
+      <p data-i="surveysDesc">Participate in online surveys offered by research platforms.</p>
     </div>
 
     <div class="feature">
-      <h3>📝 Content Writing</h3>
-      <p>Earn by writing articles, blogs and website content.</p>
-      <p>สร้างรายได้จากการเขียนบทความ</p>
+      <h3>📝 <span data-i="writing">Content Writing</span></h3>
+      <p data-i="writingDesc">Earn by writing articles, blogs and website content.</p>
     </div>
 
     <div class="feature">
-      <h3>🔗 Affiliate Marketing</h3>
-      <p>Earn commissions by promoting products and services.</p>
-      <p>รับค่าคอมมิชชันจากการแนะนำสินค้า</p>
+      <h3>🔗 <span data-i="affiliate">Affiliate Marketing</span></h3>
+      <p data-i="affiliateDesc">Earn commissions by promoting products and services.</p>
     </div>
 
     <div class="feature">
-      <h3>🎧 Virtual Assistant</h3>
-      <p>Help businesses with online administration and support.</p>
-      <p>ช่วยงานธุรกิจผ่านระบบออนไลน์</p>
+      <h3>🎧 <span data-i="assistant">Virtual Assistant</span></h3>
+      <p data-i="assistantDesc">Help businesses with online administration and support.</p>
     </div>
 
   </div>
 </section>
 
 <section class="features" id="about">
-  <h2>About Us</h2>
-  <p>
-    Our goal is to help people in Thailand
-    discover online earning opportunities.
-  </p>
-  <p>
-    เป้าหมายของเราคือช่วยให้คนไทยค้นพบโอกาส
-    ในการสร้างรายได้ผ่านช่องทางออนไลน์
+  <h2 data-i="aboutTitle">About Us</h2>
+  <p data-i="aboutDesc">
+    Our goal is to help people in Thailand discover online earning opportunities.
   </p>
 </section>
 
 <footer>
   <p>© 2026 Earn Money Thailand</p>
-  <p>Discover opportunities. Build your future.</p>
+  <p data-i="footer">Discover opportunities. Build your future.</p>
 </footer>
+
+<script>
+const translations = {
+  en: {
+    home:"Home", navJobs:"Online Jobs", navAbout:"About",
+    login:"Login", register:"Register", dashboard:"Dashboard",
+    welcome:"Welcome to Earn Money Thailand!",
+    intro:"Discover online jobs, freelance opportunities and ways to earn money from home.",
+    explore:"Explore Opportunities", join:"Join Us",
+    ways:"Ways to Earn Online",
+    description:"Explore different ways to earn money online.",
+    freelance:"Freelancing",
+    freelanceDesc:"Find freelance projects and work with clients online.",
+    translation:"Translation",
+    translationDesc:"Explore Thai and English translation opportunities.",
+    remote:"Remote Jobs",
+    remoteDesc:"Discover work-from-home job opportunities.",
+    surveys:"Online Surveys",
+    surveysDesc:"Participate in online surveys offered by research platforms.",
+    writing:"Content Writing",
+    writingDesc:"Earn by writing articles, blogs and website content.",
+    affiliate:"Affiliate Marketing",
+    affiliateDesc:"Earn commissions by promoting products and services.",
+    assistant:"Virtual Assistant",
+    assistantDesc:"Help businesses with online administration and support.",
+    aboutTitle:"About Us",
+    aboutDesc:"Our goal is to help people in Thailand discover online earning opportunities.",
+    footer:"Discover opportunities. Build your future."
+  },
+
+  th: {
+    home:"หน้าแรก", navJobs:"งานออนไลน์", navAbout:"เกี่ยวกับเรา",
+    login:"เข้าสู่ระบบ", register:"สมัครสมาชิก", dashboard:"แดชบอร์ด",
+    welcome:"ยินดีต้อนรับสู่ Earn Money Thailand!",
+    intro:"ค้นหางานออนไลน์ งานฟรีแลนซ์ และวิธีสร้างรายได้จากที่บ้าน",
+    explore:"ค้นหาโอกาส", join:"เข้าร่วมกับเรา",
+    ways:"ช่องทางสร้างรายได้ออนไลน์",
+    description:"ค้นพบวิธีสร้างรายได้ผ่านอินเทอร์เน็ต",
+    freelance:"งานฟรีแลนซ์",
+    freelanceDesc:"ค้นหาโปรเจกต์และทำงานกับลูกค้าผ่านออนไลน์",
+    translation:"งานแปลภาษา",
+    translationDesc:"ค้นหาโอกาสรับงานแปลภาษาไทยและอังกฤษ",
+    remote:"งานทางไกล",
+    remoteDesc:"ค้นหางานที่สามารถทำจากที่บ้าน",
+    surveys:"แบบสอบถามออนไลน์",
+    surveysDesc:"ตอบแบบสอบถามจากแพลตฟอร์มวิจัย",
+    writing:"งานเขียนเนื้อหา",
+    writingDesc:"สร้างรายได้จากการเขียนบทความและบล็อก",
+    affiliate:"การตลาดแบบพันธมิตร",
+    affiliateDesc:"รับค่าคอมมิชชันจากการแนะนำสินค้าและบริการ",
+    assistant:"ผู้ช่วยเสมือน",
+    assistantDesc:"ช่วยธุรกิจจัดการงานและให้บริการผ่านออนไลน์",
+    aboutTitle:"เกี่ยวกับเรา",
+    aboutDesc:"เป้าหมายของเราคือช่วยให้คนไทยค้นพบโอกาสสร้างรายได้ออนไลน์",
+    footer:"ค้นพบโอกาส สร้างอนาคตของคุณ"
+  },
+
+  hi: {
+    home:"होम", navJobs:"ऑनलाइन नौकरियाँ", navAbout:"हमारे बारे में",
+    login:"लॉगिन", register:"रजिस्टर", dashboard:"डैशबोर्ड",
+    welcome:"Earn Money Thailand में आपका स्वागत है!",
+    intro:"ऑनलाइन नौकरियाँ, फ्रीलांस काम और घर से पैसे कमाने के तरीके खोजें।",
+    explore:"अवसर देखें", join:"हमसे जुड़ें",
+    ways:"ऑनलाइन कमाई के तरीके",
+    description:"ऑनलाइन पैसे कमाने के विभिन्न तरीके खोजें।",
+    freelance:"फ्रीलांसिंग",
+    freelanceDesc:"फ्रीलांस प्रोजेक्ट खोजें और ऑनलाइन काम करें।",
+    translation:"अनुवाद",
+    translationDesc:"थाई और अंग्रेज़ी अनुवाद के अवसर खोजें।",
+    remote:"रिमोट नौकरियाँ",
+    remoteDesc:"घर से काम करने के अवसर खोजें।",
+    surveys:"ऑनलाइन सर्वेक्षण",
+    surveysDesc:"ऑनलाइन सर्वेक्षणों में भाग लें।",
+    writing:"कंटेंट लेखन",
+    writingDesc:"लेख और ब्लॉग लिखकर कमाएँ।",
+    affiliate:"एफिलिएट मार्केटिंग",
+    affiliateDesc:"उत्पादों का प्रचार करके कमीशन कमाएँ।",
+    assistant:"वर्चुअल असिस्टेंट",
+    assistantDesc:"व्यवसायों को ऑनलाइन सहायता दें।",
+    aboutTitle:"हमारे बारे में",
+    aboutDesc:"हमारा लक्ष्य थाईलैंड के लोगों को ऑनलाइन कमाई के अवसर खोजने में मदद करना है।",
+    footer:"अवसर खोजें। अपना भविष्य बनाएँ।"
+  },
+
+  zh: {
+    home:"首页", navJobs:"在线工作", navAbout:"关于我们",
+    login:"登录", register:"注册", dashboard:"用户中心",
+    welcome:"欢迎来到 Earn Money Thailand！",
+    intro:"寻找在线工作、自由职业和在家赚钱的机会。",
+    explore:"探索机会", join:"加入我们",
+    ways:"在线赚钱方式",
+    description:"探索不同的在线赚钱方式。",
+    freelance:"自由职业",
+    freelanceDesc:"寻找自由职业项目并在线与客户合作。",
+    translation:"翻译",
+    translationDesc:"寻找泰语和英语翻译机会。",
+    remote:"远程工作",
+    remoteDesc:"寻找在家工作的机会。",
+    surveys:"在线调查",
+    surveysDesc:"参与研究平台提供的在线调查。",
+    writing:"内容写作",
+    writingDesc:"通过撰写文章和博客赚钱。",
+    affiliate:"联盟营销",
+    affiliateDesc:"通过推广产品和服务赚取佣金。",
+    assistant:"虚拟助理",
+    assistantDesc:"为企业提供在线行政和支持服务。",
+    aboutTitle:"关于我们",
+    aboutDesc:"我们的目标是帮助泰国居民发现在线赚钱机会。",
+    footer:"发现机会，创造未来。"
+  },
+
+  ja: {
+    home:"ホーム", navJobs:"オンラインの仕事", navAbout:"私たちについて",
+    login:"ログイン", register:"登録", dashboard:"ダッシュボード",
+    welcome:"Earn Money Thailandへようこそ！",
+    intro:"オンラインの仕事や在宅で収入を得る機会を見つけましょう。",
+    explore:"仕事を探す", join:"参加する",
+    ways:"オンラインで稼ぐ方法",
+    description:"さまざまなオンライン収入の方法を見つけましょう。",
+    freelance:"フリーランス",
+    freelanceDesc:"オンラインの仕事やプロジェクトを探しましょう。",
+    translation:"翻訳",
+    translationDesc:"タイ語と英語の翻訳の仕事を探しましょう。",
+    remote:"リモートワーク",
+    remoteDesc:"在宅でできる仕事を探しましょう。",
+    surveys:"オンラインアンケート",
+    surveysDesc:"オンラインアンケートに参加しましょう。",
+    writing:"コンテンツ作成",
+    writingDesc:"記事やブログを書いて収入を得ましょう。",
+    affiliate:"アフィリエイト",
+    affiliateDesc:"商品やサービスを紹介して報酬を得ましょう。",
+    assistant:"オンラインアシスタント",
+    assistantDesc:"企業のオンライン業務をサポートしましょう。",
+    aboutTitle:"私たちについて",
+    aboutDesc:"タイの人々がオンラインで収入を得る機会を見つけるお手伝いをします。",
+    footer:"機会を見つけ、未来を築きましょう。"
+  },
+
+  ko: {
+    home:"홈", navJobs:"온라인 일자리", navAbout:"소개",
+    login:"로그인", register:"회원가입", dashboard:"대시보드",
+    welcome:"Earn Money Thailand에 오신 것을 환영합니다!",
+    intro:"온라인 일자리와 재택근무 기회를 찾아보세요.",
+    explore:"기회 찾아보기", join:"가입하기",
+    ways:"온라인 수익 창출 방법",
+    description:"다양한 온라인 수익 기회를 찾아보세요.",
+    freelance:"프리랜서",
+    freelanceDesc:"온라인 프로젝트와 고객을 찾아보세요.",
+    translation:"번역",
+    translationDesc:"태국어와 영어 번역 일자리를 찾아보세요.",
+    remote:"원격 근무",
+    remoteDesc:"집에서 할 수 있는 일자리를 찾아보세요.",
+    surveys:"온라인 설문조사",
+    surveysDesc:"온라인 설문조사에 참여하세요.",
+    writing:"콘텐츠 작성",
+    writingDesc:"글과 블로그를 작성하여 수익을 얻으세요.",
+    affiliate:"제휴 마케팅",
+    affiliateDesc:"상품과 서비스를 홍보하고 수수료를 받으세요.",
+    assistant:"가상 비서",
+    assistantDesc:"기업의 온라인 업무를 지원하세요.",
+    aboutTitle:"소개",
+    aboutDesc:"태국 사람들이 온라인 수익 기회를 찾도록 돕는 것이 우리의 목표입니다.",
+    footer:"기회를 찾고 미래를 만들어 보세요."
+  },
+
+  vi: {
+    home:"Trang chủ", navJobs:"Việc làm trực tuyến", navAbout:"Giới thiệu",
+    login:"Đăng nhập", register:"Đăng ký", dashboard:"Bảng điều khiển",
+    welcome:"Chào mừng đến với Earn Money Thailand!",
+    intro:"Khám phá việc làm trực tuyến và cơ hội kiếm tiền tại nhà.",
+    explore:"Khám phá cơ hội", join:"Tham gia",
+    ways:"Các cách kiếm tiền trực tuyến",
+    description:"Khám phá nhiều cách kiếm tiền trực tuyến.",
+    freelance:"Làm việc tự do",
+    freelanceDesc:"Tìm dự án tự do và làm việc với khách hàng trực tuyến.",
+    translation:"Dịch thuật",
+    translationDesc:"Tìm cơ hội dịch tiếng Thái và tiếng Anh.",
+    remote:"Việc làm từ xa",
+    remoteDesc:"Tìm công việc có thể làm tại nhà.",
+    surveys:"Khảo sát trực tuyến",
+    surveysDesc:"Tham gia các khảo sát trực tuyến.",
+    writing:"Viết nội dung",
+    writingDesc:"Kiếm tiền bằng cách viết bài và blog.",
+    affiliate:"Tiếp thị liên kết",
+    affiliateDesc:"Kiếm hoa hồng bằng cách quảng bá sản phẩm và dịch vụ.",
+    assistant:"Trợ lý ảo",
+    assistantDesc:"Hỗ trợ doanh nghiệp quản lý công việc trực tuyến.",
+    aboutTitle:"Giới thiệu",
+    aboutDesc:"Mục tiêu của chúng tôi là giúp mọi người tại Thái Lan tìm cơ hội kiếm tiền trực tuyến.",
+    footer:"Khám phá cơ hội. Xây dựng tương lai."
+  },
+
+  ms: {
+    home:"Laman Utama", navJobs:"Kerja Dalam Talian", navAbout:"Tentang Kami",
+    login:"Log Masuk", register:"Daftar", dashboard:"Papan Pemuka",
+    welcome:"Selamat datang ke Earn Money Thailand!",
+    intro:"Temui pekerjaan dalam talian dan peluang menjana pendapatan dari rumah.",
+    explore:"Terokai Peluang", join:"Sertai Kami",
+    ways:"Cara Menjana Pendapatan Dalam Talian",
+    description:"Terokai pelbagai cara menjana wang dalam talian.",
+    freelance:"Kerja Bebas",
+    freelanceDesc:"Cari projek bebas dan bekerja dengan pelanggan dalam talian.",
+    translation:"Terjemahan",
+    translationDesc:"Cari peluang terjemahan bahasa Thai dan Inggeris.",
+    remote:"Kerja Jarak Jauh",
+    remoteDesc:"Cari peluang bekerja dari rumah.",
+    surveys:"Tinjauan Dalam Talian",
+    surveysDesc:"Sertai tinjauan dalam talian.",
+    writing:"Penulisan Kandungan",
+    writingDesc:"Jana pendapatan dengan menulis artikel dan blog.",
+    affiliate:"Pemasaran Gabungan",
+    affiliateDesc:"Dapatkan komisen dengan mempromosikan produk dan perkhidmatan.",
+    assistant:"Pembantu Maya",
+    assistantDesc:"Bantu perniagaan dengan urusan pentadbiran dalam talian.",
+    aboutTitle:"Tentang Kami",
+    aboutDesc:"Matlamat kami adalah membantu masyarakat di Thailand menemui peluang menjana pendapatan dalam talian.",
+    footer:"Temui peluang. Bina masa depan anda."
+  }
+};
+
+function changeLanguage() {
+  const language = document.getElementById("languageSelect").value;
+  const words = translations[language];
+
+  document.querySelectorAll("[data-i]").forEach(element => {
+    const key = element.getAttribute("data-i");
+    if (words[key]) {
+      element.textContent = words[key];
+    }
+  });
+
+  document.documentElement.lang = language;
+
+  try {
+    localStorage.setItem("preferredLanguage", language);
+  } catch (error) {
+    // Language selection still works if browser storage is unavailable.
+  }
+}
+
+const languageSelect = document.getElementById("languageSelect");
+
+languageSelect.addEventListener("change", changeLanguage);
+
+try {
+  const savedLanguage = localStorage.getItem("preferredLanguage");
+  if (savedLanguage && translations[savedLanguage]) {
+    languageSelect.value = savedLanguage;
+  }
+} catch (error) {
+  // English remains the default language.
+}
+
+changeLanguage();
+</script>
 
 </body>
 </html>
